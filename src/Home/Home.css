@@ -1,0 +1,13 @@
+.LeaderboardSpot {
+    list-style-type: none;
+    border: 2px solid black;
+    margin: 10px;
+    padding-left: 20px;
+}
+
+.Leaderboard {
+    text-align: left;
+    align-self: center;
+    width: 40%;
+    margin: auto;
+}
