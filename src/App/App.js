@@ -5,7 +5,7 @@ import UpdateStats from '../UpdateStats/UpdateStats';
 import Login from '../Login/Login';
 import Navigation from '../Navigation/Navigation';
 import Context from '../Context';
-import sampleMembers from '../sampleMembers';
+// import sampleMembers from '../sampleMembers';
 import './App.css';
 
 class App extends Component {
@@ -13,23 +13,33 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      members: []
-    }
-  }
+      members: [],
+      username: "",
+      password: "",
+      token: ""
+    };
+  };
 
   componentDidMount() {
     console.log('Component Mounted!')
-    this.gatherMembers()
-  }
+    fetch('http://localhost:8000/members')
+      .then(res => res.json())
+      .then(res => res.sort((a, b) => {
+        return b.number - a.number;
+      }))
+      .then(res => this.setState({members: res}));
+  };
 
-  gatherMembers() {
+  handleLogin = (username, password) => {
     this.setState({
-      members: [
-        ...this.state.members,
-        sampleMembers
-      ]
-    })
-  }
+      username: username,
+      password: password
+    });
+  };
+
+  handleSorting = (childData) => {
+    this.setState({members: childData})
+  };
 
   renderNavigation() {
     return (
@@ -48,7 +58,9 @@ class App extends Component {
         <Route
           exact
           path="/"
-          component={Home}
+          render={(props) => (
+            <Home {...props} members={this.state.members} handleSorting={this.handleSorting}/>
+          )}
         />
         <Route
           path="/update"
@@ -56,7 +68,9 @@ class App extends Component {
         />
         <Route
           path="/login"
-          component={Login}
+          render={(props) => (
+            <Login {...props} handleLogin={this.handleLogin}/>
+          )}
         />
       </>
     )
