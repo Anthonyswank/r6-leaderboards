@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {Route, Link} from 'react-router-dom';
 import Home from '../Home/Home';
 import UpdateStats from '../UpdateStats/UpdateStats';
-import Login from '../Login/Login';
+import Login from '../AuthComponents/Login/Login';
 import Navigation from '../Navigation/Navigation';
 import Context from '../Context';
-// import sampleMembers from '../sampleMembers';
 import './App.css';
 
 class App extends Component {
@@ -14,10 +13,10 @@ class App extends Component {
     super(props)
     this.state = {
       members: [],
-      username: "",
-      password: "",
-      token: ""
     };
+    this.handleAddMember = this.handleAddMember.bind(this)
+    this.handleDeleteMember = this.handleDeleteMember.bind(this)
+    this.handleUpdateMember = this.handleUpdateMember.bind(this)
   };
 
   componentDidMount() {
@@ -30,15 +29,29 @@ class App extends Component {
       .then(res => this.setState({members: res}));
   };
 
-  handleLogin = (username, password) => {
+  handleSorting = (childData) => {
     this.setState({
-      username: username,
-      password: password
-    });
+      members: childData
+    })
   };
 
-  handleSorting = (childData) => {
-    this.setState({members: childData})
+  handleAddMember = member => {
+    this.setState({
+      members: [...this.state.members, member]
+    })
+  };
+
+  // WIP function, not in use.
+  handleUpdateMember = updatedMember => {
+    this.setState({
+      members: [...this.state.members, updatedMember]
+    })
+  };
+
+  handleDeleteMember = name => {
+    this.setState({
+      members: this.state.members.filter(member => member.name !== name)
+    })
   };
 
   renderNavigation() {
@@ -68,9 +81,7 @@ class App extends Component {
         />
         <Route
           path="/login"
-          render={(props) => (
-            <Login {...props} handleLogin={this.handleLogin}/>
-          )}
+          component={Login}
         />
       </>
     )
@@ -78,7 +89,10 @@ class App extends Component {
 
   render() {
     const contextValue = {
-      members: this.state.members
+      members: this.state.members,
+      addMember: this.handleAddMember,
+      deleteMember: this.handleDeleteMember,
+      updateMember: this.handleUpdateMember,
     }
     return (
       <Context.Provider value={contextValue}>

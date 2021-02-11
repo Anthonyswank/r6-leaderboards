@@ -1,5 +1,8 @@
 import React from 'react'
 
 export default React.createContext({
-    members: []
+    members: [],
+    addMember: () => {},
+    deleteMember: () => {},
+    updateMember: () => {},
 })
