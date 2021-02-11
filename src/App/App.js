@@ -20,7 +20,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log('Component Mounted!')
     fetch('https://salty-woodland-49219.herokuapp.com/members')
       .then(res => res.json())
       .then(res => res.sort((a, b) => {
