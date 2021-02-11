@@ -20,3 +20,5 @@ Technology used in this project includes,
     - Mocha
     - Supertest
     - React testing library
+
+![Alt text](/src/Assets/screenshot.png?raw=true "Screenshot")
