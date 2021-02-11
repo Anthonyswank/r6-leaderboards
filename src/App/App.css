@@ -1,8 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 .App {
+  background: #535454;
+  border: 5px solid black;
+}
+
+.Nav {
+  display: flex;
+  justify-content: center;
+}
+
+.Main {
+  display: flex;
+  justify-content: center;
+}
+
+h1 a:link, h1 a:hover, h1 a:visited, h1 a:active {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  font-size: 45px;
   text-align: center;
 }
 
-h3 {
+footer h3 {
   margin-top: 30px;
+  padding-left: 50px;
+  padding-bottom: 30px;
   font-size: 18px;
 }

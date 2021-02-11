@@ -43,7 +43,7 @@ export default class Home extends Component {
     // renders leaderboard component to home page.
     render() {
         return (
-        <div>
+        <div className="Home">
             <div className="DropdownBox">
                 <form>
                     <select
@@ -53,7 +53,6 @@ export default class Home extends Component {
                         <option value="desc">Sort by Rank(Lowest to Highest)</option>
                         <option value="sortnameaz">Sort by Name A - Z</option>
                         <option value="sortnameza">Sort by Name Z - A</option>
-                        <option value="updated">Sort by Last Updated</option>
                     </select>
                 </form>
             </div>

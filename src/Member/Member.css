@@ -1,3 +1,17 @@
 .Member {
-    max-width: 300px;
+    display: flex;
+    flex-direction: row;
 }
+
+img {
+    width: 50%;
+    height: 80%;
+}
+
+.Info {
+   width: 80%; 
+}
+
+.Picture {
+    text-align: center;
+}   

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.AddMember, .DeleteMember {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: 5px solid black;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 300px;
+}
+
+.AddMember h2, .DeleteMember h2 {
+    text-align: center;
+    color: black;
+}
+
+.AddForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: black;
+}
+
+input {
+    margin: 10px;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

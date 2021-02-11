@@ -1,13 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 .LeaderboardSpot {
+    align-self: center;
     list-style-type: none;
-    border: 2px solid black;
+    background-color: white;
+    border: 5px solid black;
     margin: 10px;
-    padding-left: 20px;
+    padding-left: 15px;
+    font-family: 'Poppins', sans-serif;
+    width: 75%;
 }
 
-.Leaderboard {
-    text-align: left;
-    align-self: center;
-    width: 40%;
-    margin: auto;
+.Leaderboard ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+.Home {
+    display: flex;
+    flex-direction: column;
+}
+
+.DropdownBox {
+    align-self: center;
+    width: auto;
+    padding-bottom: 20px;
+}
+
+.DropdownBox select {
+    border: 4px solid black;
+    padding: 5px;
+    background-color: white;
+    user-select: none;
+    box-sizing: border-box;
+}
+

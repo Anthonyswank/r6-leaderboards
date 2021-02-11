@@ -14,8 +14,11 @@ export default class Navigation extends Component {
                 <NavLink className="NavLink" to="/update">Add / Delete</NavLink>               
                 </li>
                 <li className="ListItem">
-                <NavLink className="NavLink" to="/operators">Operators</NavLink>               
+                <NavLink className="NavLink" to="/about">About</NavLink>               
                 </li>
+                {/*<li className="ListItem">
+                <NavLink className="NavLink" to="/operators">Operators</NavLink>               
+                </li>*/}
                 {/*<li className="ListItem">
                 <NavLink className="NavLink" to="/login">Login/Logout</NavLink>               
                 </li> */}

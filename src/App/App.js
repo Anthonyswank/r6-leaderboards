@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Route, Link} from 'react-router-dom';
 import Home from '../Home/Home';
+import About from '../About/About';
 import UpdateStats from '../UpdateStats/UpdateStats';
-import Login from '../AuthComponents/Login/Login';
 import Navigation from '../Navigation/Navigation';
 import Context from '../Context';
 import './App.css';
@@ -21,7 +21,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log('Component Mounted!')
-    fetch('http://localhost:8000/members')
+    fetch('https://salty-woodland-49219.herokuapp.com/members')
       .then(res => res.json())
       .then(res => res.sort((a, b) => {
         return b.number - a.number;
@@ -80,8 +80,8 @@ class App extends Component {
           component={UpdateStats}
         />
         <Route
-          path="/login"
-          component={Login}
+          path="/about"
+          component={About}
         />
       </>
     )

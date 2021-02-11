@@ -24,7 +24,7 @@ export default class UpdateStats extends Component {
             number: e.target['member-number'].value,
             last_modified: new Date(),
         }
-        fetch('http://localhost:8000/members', {
+        fetch('https://salty-woodland-49219.herokuapp.com/members', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -48,7 +48,7 @@ export default class UpdateStats extends Component {
     handleDelete = e => {
        e.preventDefault()
        const name = e.target['member-delete-name'].value
-       fetch(`http://localhost:8000/members/${name}`, {
+       fetch(`https://salty-woodland-49219.herokuapp.com/members/${name}`, {
            method: 'DELETE',
            headers: {
                'content-type': 'application/json'
@@ -82,7 +82,7 @@ export default class UpdateStats extends Component {
         <section>
         <section className='AddMember'>
             <h2>Add a member</h2>
-            <form onSubmit={e => this.handleSubmit(e)}>
+            <form className="AddForm" onSubmit={e => this.handleSubmit(e)}>
                 <div>
                     <label htmlFor='member-name-input'>
                         Member Name
@@ -106,15 +106,13 @@ export default class UpdateStats extends Component {
                     />
                 </div>
                 <div>
-                    <button type='submit'>
-                        Add Member
-                    </button>
+                    <input type="submit" value="Add"></input>
                 </div>
             </form>
         </section>
         <section className='DeleteMember'>
             <h2>Delete a member</h2>
-            <form onSubmit={e => this.handleDelete(e)}>
+            <form className="AddForm" onSubmit={e => this.handleDelete(e)}>
                 <div>
                     <label htmlFor='member-delete-name-input'>
                         Member Name
@@ -126,9 +124,7 @@ export default class UpdateStats extends Component {
                     />
                 </div>
                 <div>
-                    <button type='submit'>
-                        Delete Member
-                    </button>
+                    <input type="submit" value="Delete"></input>
                 </div>
             </form>
         </section>

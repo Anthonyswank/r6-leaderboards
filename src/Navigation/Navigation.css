@@ -1,19 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.Navigation {
+    display: flex;
+    justify-content: center;
+    width: 550px;
+}
+
 .NavList {
-    background: lightgrey;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 20px;
     padding: 0;
-    margin-left: 10px;
-    margin-right: 10px;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #535454;
+    border: 5px solid black;
+    width: 63.5%;
 }
 
 .ListItem {
-    display: inline-block;
-    list-style-type: none;
-    padding: 10px;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    float: left;
 }
 
-.ListItem li {
-    font-size: 16px;
-    padding: 12px 12px;
+.ListItem a:hover {
+    background-color: #111111;
 }
+
+.ListItem a {
+    display: block;
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media all and (min-width:700px) {
+    .NavList {
+        flex-direction: row;
+    }
+    }
